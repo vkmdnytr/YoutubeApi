@@ -1,4 +1,4 @@
-package com.example.youtube.ui.youtube.germany
+package com.example.youtube.ui.videolist.germany
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

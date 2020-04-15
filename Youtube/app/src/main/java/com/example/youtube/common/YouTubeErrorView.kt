@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import com.example.youtube.R
 import kotlinx.android.synthetic.main.error_layout.view.*
 
-class YouTubeError @JvmOverloads constructor(
+class YouTubeErrorView @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet,
     defStyleRes: Int = 0

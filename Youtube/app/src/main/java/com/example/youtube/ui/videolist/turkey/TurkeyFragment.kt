@@ -1,4 +1,4 @@
-package com.example.youtube.ui.youtube.germany
+package com.example.youtube.ui.videolist.turkey
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,40 +10,42 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.youtube.MainActivity
 import com.example.youtube.R
 import com.example.youtube.common.OnItemListClick
 import com.example.youtube.model.entities.Item
 import com.example.youtube.model.entities.YouTubeResponseItem
 import com.example.youtube.model.sealed.Results
-import com.example.youtube.ui.youtube.YoutubeAdapter
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_turkey.popListProgress
-import kotlinx.android.synthetic.main.fragment_turkey.popListRecyclerView
+import com.example.youtube.ui.videolist.YoutubeAdapter
+import kotlinx.android.synthetic.main.fragment_turkey.*
 
-class GermanyFragment : Fragment(), OnItemListClick {
+class TurkeyFragment : Fragment(), OnItemListClick {
 
-    private val viewModel: GermanyViewModel by viewModels()
+    private val viewModel: TurkeyViewModel by viewModels()
     private lateinit var youtubeAdapter: YoutubeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_germany, container, false)
+        return inflater.inflate(R.layout.fragment_turkey, container, false)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        youtubeAdapter = YoutubeAdapter(emptyList(), lifecycle, this)
+        youtubeAdapter = YoutubeAdapter(
+            emptyList(),
+            lifecycle,
+            this
+        )
         popListRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         popListRecyclerView.adapter = youtubeAdapter
-
-        (activity as MainActivity).errorView.setOnClickListener {
+        errorView.setOnClickListener {
             showProgress()
             viewModel.getPopList("TR")
         }
+
 
     }
 
@@ -52,7 +54,7 @@ class GermanyFragment : Fragment(), OnItemListClick {
         viewModel.popListLiveData.observe(viewLifecycleOwner, Observer { result ->
             handleResponse(result)
         })
-        viewModel.getPopList("DE")
+        viewModel.getPopList("TR")
     }
 
     private fun handleResponse(results: Results<YouTubeResponseItem>) {
@@ -68,38 +70,39 @@ class GermanyFragment : Fragment(), OnItemListClick {
     }
 
     private fun handleSuccess(value: YouTubeResponseItem) {
-        youtubeAdapter.updateDataSource(value.items)
+        val result = value
+        youtubeAdapter.updateDataSource(result.items)
+
+
     }
 
     private fun showList() {
         popListRecyclerView.isVisible = true
         popListProgress.isVisible = false
-        (activity as MainActivity).errorView.isVisible = false
-        (activity as MainActivity).errorView.isClickable = false
+        errorView.isVisible = false
+        errorView.isClickable = false
 
     }
 
     private fun showError(error: String) {
         popListRecyclerView.isVisible = false
         popListProgress.isVisible = false
-        (activity as MainActivity).errorView.isVisible = true
-        (activity as MainActivity).errorView.isClickable = true
-        (activity as MainActivity).errorView.setInfoText(error)
+        errorView.isVisible = true
+        errorView.isClickable = true
+        errorView.setInfoText(error)
     }
 
     private fun showProgress() {
         popListRecyclerView.isVisible = false
         popListProgress.isVisible = true
-        (activity as MainActivity).errorView.isVisible = false
-        (activity as MainActivity).errorView.isClickable = false
+        errorView.isVisible = false
+        errorView.isClickable = false
     }
 
     override fun onItemListClick(clickItem: Item) {
-        val direction =
-            GermanyFragmentDirections.actionDeFragmentToVideoDetailFragment(
-                clickItem
-            )
+        val direction = TurkeyFragmentDirections.actionTrFragmentToVideoDetailFragment(clickItem)
         findNavController().navigate(direction)
     }
+
 
 }

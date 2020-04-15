@@ -1,4 +1,4 @@
-package com.example.youtube.ui.youtube
+package com.example.youtube.ui.videolist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -34,7 +34,9 @@ class YoutubeAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val youTubePlayerView =
             LayoutInflater.from(parent.context).inflate(R.layout.item_youtube, parent, false)
-        return YouTubeViewHolder(youTubePlayerView)
+        return YouTubeViewHolder(
+            youTubePlayerView
+        )
 
     }
 

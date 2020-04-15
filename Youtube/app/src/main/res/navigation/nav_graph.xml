@@ -7,7 +7,7 @@
     tools:ignore="UnusedNavigation">
     <fragment
         android:id="@+id/turkeyFragment"
-        android:name="com.example.youtube.ui.youtube.turkey.TurkeyFragment"
+        android:name="com.example.youtube.ui.videolist.turkey.TurkeyFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_turkey" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/germanyFragment"
-        android:name="com.example.youtube.ui.youtube.germany.GermanyFragment"
+        android:name="com.example.youtube.ui.videolist.germany.GermanyFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_germany" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/usaFragment"
-        android:name="com.example.youtube.ui.youtube.usa.UsaFragment"
+        android:name="com.example.youtube.ui.videolist.usa.UsaFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_usa" >
         <action
