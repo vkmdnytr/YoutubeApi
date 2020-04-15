@@ -1,4 +1,4 @@
-package com.example.youtube.entity.sealed
+package com.example.youtube.model.sealed
 
 sealed class Results<out T:Any>{
    data class Success<out T:Any>(val value: T):Results<T>()

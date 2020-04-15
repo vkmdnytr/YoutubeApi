@@ -1,7 +1,7 @@
-package com.example.youtube.entity.rest
+package com.example.youtube.model.rest
 
 import com.example.youtube.common.safeApiCall
-import com.example.youtube.entity.sealed.Results
+import com.example.youtube.model.sealed.Results
 import retrofit2.Response
 
 class ServiceRetrofit{

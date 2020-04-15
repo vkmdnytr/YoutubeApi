@@ -9,7 +9,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.RecyclerView
 import com.example.youtube.R
 import com.example.youtube.common.OnItemListClick
-import com.example.youtube.entity.model.Item
+import com.example.youtube.model.entities.Item
 import com.pierfrancescosoffritti.youtubeplayer.player.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView
 

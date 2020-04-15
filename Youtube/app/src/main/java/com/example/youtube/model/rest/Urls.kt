@@ -1,4 +1,4 @@
-package com.example.youtube.entity.rest
+package com.example.youtube.model.rest
 
 object Urls{
         // SERVICE URL

@@ -1,9 +1,7 @@
-package com.example.youtube.entity.model
+package com.example.youtube.model.entities
 
-import com.squareup.moshi.JsonClass
 import java.io.Serializable
 
-@JsonClass(generateAdapter = true)
 data class Item(
     val contentDetails: ContentDetails,
     val etag: String,

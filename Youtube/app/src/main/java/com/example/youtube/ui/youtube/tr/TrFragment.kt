@@ -13,11 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.youtube.MainActivity
 import com.example.youtube.R
 import com.example.youtube.common.OnItemListClick
-import com.example.youtube.entity.model.Item
-import com.example.youtube.entity.model.YouTubeResponseItem
-import com.example.youtube.entity.sealed.Results
+import com.example.youtube.model.entities.Item
+import com.example.youtube.model.entities.YouTubeResponseItem
+import com.example.youtube.model.sealed.Results
 import com.example.youtube.ui.youtube.YoutubeAdapter
-import com.example.youtube.ui.youtube.us.UsFragmentDirections
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_tr.popListProgress
 import kotlinx.android.synthetic.main.fragment_tr.popListRecyclerView

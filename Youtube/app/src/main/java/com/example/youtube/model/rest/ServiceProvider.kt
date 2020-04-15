@@ -1,4 +1,4 @@
-package com.example.youtube.entity.rest
+package com.example.youtube.model.rest
 
 import android.util.Log
 import com.example.youtube.BuildConfig

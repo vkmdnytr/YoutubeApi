@@ -1,6 +1,6 @@
-package com.example.youtube.entity.rest
+package com.example.youtube.model.rest
 
-import com.example.youtube.entity.model.YouTubeResponseItem
+import com.example.youtube.model.entities.YouTubeResponseItem
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.GET

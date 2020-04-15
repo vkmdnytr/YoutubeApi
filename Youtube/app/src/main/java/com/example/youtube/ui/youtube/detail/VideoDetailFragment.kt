@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.example.youtube.R
 
-import com.example.youtube.entity.model.Item
+import com.example.youtube.model.entities.Item
 import com.pierfrancescosoffritti.youtubeplayer.player.AbstractYouTubePlayerListener
 import kotlinx.android.synthetic.main.fragment_video_detail.*
 

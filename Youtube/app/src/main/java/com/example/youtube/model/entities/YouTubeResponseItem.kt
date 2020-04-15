@@ -1,4 +1,4 @@
-package com.example.youtube.entity.model
+package com.example.youtube.model.entities
 
 data class YouTubeResponseItem(
     val etag: String,

@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.youtube.common.SingleLiveEvent
-import com.example.youtube.entity.model.YouTubeResponseItem
-import com.example.youtube.entity.rest.ServiceRetrofit
-import com.example.youtube.entity.sealed.Results
+import com.example.youtube.model.entities.YouTubeResponseItem
+import com.example.youtube.model.rest.ServiceRetrofit
+import com.example.youtube.model.sealed.Results
 import kotlinx.coroutines.launch
 
 class UsViewModel : ViewModel() {
