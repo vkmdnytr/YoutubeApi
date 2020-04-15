@@ -1,4 +1,4 @@
-package com.example.youtube.ui.youtube.us
+package com.example.youtube.ui.youtube.germany
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +9,7 @@ import com.example.youtube.model.rest.ServiceRetrofit
 import com.example.youtube.model.sealed.Results
 import kotlinx.coroutines.launch
 
-class UsViewModel : ViewModel() {
+class GermanyViewModel : ViewModel() {
 
     private val _popListLiveData = SingleLiveEvent<Results<YouTubeResponseItem>>()
     val popListLiveData: LiveData<Results<YouTubeResponseItem>>

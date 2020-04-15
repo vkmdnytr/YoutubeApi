@@ -1,4 +1,4 @@
-package com.example.youtube.ui.youtube.de
+package com.example.youtube.ui.youtube.usa
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,41 +18,44 @@ import com.example.youtube.model.entities.YouTubeResponseItem
 import com.example.youtube.model.sealed.Results
 import com.example.youtube.ui.youtube.YoutubeAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_tr.popListProgress
-import kotlinx.android.synthetic.main.fragment_tr.popListRecyclerView
+import kotlinx.android.synthetic.main.fragment_usa.popListProgress
+import kotlinx.android.synthetic.main.fragment_usa.popListRecyclerView
 
-class DeFragment : Fragment(), OnItemListClick {
+class UsaFragment : Fragment(), OnItemListClick {
 
-    private val viewModel: DeViewModel by viewModels()
-    private lateinit var youtubeAdapter: YoutubeAdapter
+    private val viewModel: UsaViewModel by viewModels()
+    lateinit var youtubeAdapter: YoutubeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_de, container, false)
+        return inflater.inflate(R.layout.fragment_usa, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         youtubeAdapter = YoutubeAdapter(emptyList(), lifecycle, this)
-        popListRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        val layoutManager = LinearLayoutManager(requireContext())
+        popListRecyclerView.layoutManager = layoutManager
         popListRecyclerView.adapter = youtubeAdapter
+
 
         (activity as MainActivity).errorView.setOnClickListener {
             showProgress()
-            viewModel.getPopList("TR")
+            viewModel.getPopList("US")
         }
 
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         viewModel.popListLiveData.observe(viewLifecycleOwner, Observer { result ->
             handleResponse(result)
         })
-        viewModel.getPopList("DE")
+        viewModel.getPopList("US")
+
     }
 
     private fun handleResponse(results: Results<YouTubeResponseItem>) {
@@ -69,6 +72,8 @@ class DeFragment : Fragment(), OnItemListClick {
 
     private fun handleSuccess(value: YouTubeResponseItem) {
         youtubeAdapter.updateDataSource(value.items)
+
+
     }
 
     private fun showList() {
@@ -95,8 +100,9 @@ class DeFragment : Fragment(), OnItemListClick {
     }
 
     override fun onItemListClick(clickItem: Item) {
-        val direction = DeFragmentDirections.actionDeFragmentToVideoDetailFragment(clickItem)
+        val direction = UsaFragmentDirections.actionUsFragmentToVideoDetailFragment(clickItem)
         findNavController().navigate(direction)
     }
+
 
 }

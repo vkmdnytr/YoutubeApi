@@ -1,4 +1,4 @@
-package com.example.youtube.ui.youtube.detail
+package com.example.youtube.ui.videodetail
 
 import android.os.Bundle
 import android.view.LayoutInflater

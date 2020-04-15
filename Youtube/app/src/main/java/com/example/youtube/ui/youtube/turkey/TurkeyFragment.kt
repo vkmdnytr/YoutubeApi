@@ -1,4 +1,4 @@
-package com.example.youtube.ui.youtube.tr
+package com.example.youtube.ui.youtube.turkey
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,19 +18,19 @@ import com.example.youtube.model.entities.YouTubeResponseItem
 import com.example.youtube.model.sealed.Results
 import com.example.youtube.ui.youtube.YoutubeAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_tr.popListProgress
-import kotlinx.android.synthetic.main.fragment_tr.popListRecyclerView
+import kotlinx.android.synthetic.main.fragment_turkey.popListProgress
+import kotlinx.android.synthetic.main.fragment_turkey.popListRecyclerView
 
-class TrFragment : Fragment(), OnItemListClick {
+class TurkeyFragment : Fragment(), OnItemListClick {
 
-    private val viewModel: TrViewModel by viewModels()
+    private val viewModel: TurkeyViewModel by viewModels()
     private lateinit var youtubeAdapter: YoutubeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_tr, container, false)
+        return inflater.inflate(R.layout.fragment_turkey, container, false)
     }
 
 
@@ -99,7 +99,7 @@ class TrFragment : Fragment(), OnItemListClick {
     }
 
     override fun onItemListClick(clickItem: Item) {
-        val direction = TrFragmentDirections.actionTrFragmentToVideoDetailFragment(clickItem)
+        val direction = TurkeyFragmentDirections.actionTrFragmentToVideoDetailFragment(clickItem)
         findNavController().navigate(direction)
     }
 

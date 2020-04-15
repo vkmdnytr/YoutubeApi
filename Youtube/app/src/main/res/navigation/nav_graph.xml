@@ -3,44 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/trFragment"
+    app:startDestination="@id/turkeyFragment"
     tools:ignore="UnusedNavigation">
     <fragment
-        android:id="@+id/trFragment"
-        android:name="com.example.youtube.ui.youtube.tr.TrFragment"
+        android:id="@+id/turkeyFragment"
+        android:name="com.example.youtube.ui.youtube.turkey.TurkeyFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_tr" >
+        tools:layout="@layout/fragment_turkey" >
         <action
             android:id="@+id/action_youtubeFragment_to_usFragment"
-            app:destination="@id/usFragment" />
+            app:destination="@id/usaFragment" />
         <action
             android:id="@+id/action_youtubeFragment_to_deFragment"
-            app:destination="@id/deFragment" />
+            app:destination="@id/germanyFragment" />
         <action
             android:id="@+id/action_trFragment_to_videoDetailFragment"
             app:destination="@id/videoDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/deFragment"
-        android:name="com.example.youtube.ui.youtube.de.DeFragment"
+        android:id="@+id/germanyFragment"
+        android:name="com.example.youtube.ui.youtube.germany.GermanyFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_de" >
+        tools:layout="@layout/fragment_germany" >
         <action
             android:id="@+id/action_deFragment_to_videoDetailFragment"
             app:destination="@id/videoDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/usFragment"
-        android:name="com.example.youtube.ui.youtube.us.UsFragment"
+        android:id="@+id/usaFragment"
+        android:name="com.example.youtube.ui.youtube.usa.UsaFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_us" >
+        tools:layout="@layout/fragment_usa" >
         <action
             android:id="@+id/action_usFragment_to_videoDetailFragment"
             app:destination="@id/videoDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/videoDetailFragment"
-        android:name="com.example.youtube.ui.youtube.detail.VideoDetailFragment"
+        android:name="com.example.youtube.ui.videodetail.VideoDetailFragment"
         android:label="@string/detail_title"
         tools:layout="@layout/fragment_video_detail" >
         <argument
