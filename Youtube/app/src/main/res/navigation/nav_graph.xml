@@ -45,6 +45,6 @@
         tools:layout="@layout/fragment_video_detail" >
         <argument
             android:name="detailItem"
-            app:argType="com.example.youtube.entity.model.Item" />
+            app:argType="com.example.youtube.model.entities.Item" />
     </fragment>
 </navigation>
