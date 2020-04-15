@@ -4,11 +4,11 @@ import com.example.youtube.common.extensions.safeApiCall
 import com.example.youtube.common.helper.Results
 import retrofit2.Response
 
-class ServiceRetrofit{
-    private val service: ServiceInterface = getService()
+object YoutubeRepository{
+    private val SERVICE: YoutubeService = getService()
     suspend fun getYoutubePopularList(country:String)=
         safeApiCall {
-            val response = service.getPopularYouTubeListAsync(regionCode = country).await()
+            val response = SERVICE.getPopularYouTubeListAsync(regionCode = country).await()
             handleService(response)
         }
 

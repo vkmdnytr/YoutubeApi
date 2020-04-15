@@ -5,8 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.youtube.common.helper.SingleLiveEvent
 import com.example.youtube.model.entities.YouTubeResponseItem
-import com.example.youtube.model.rest.ServiceRetrofit
+import com.example.youtube.model.rest.YoutubeRepository
 import com.example.youtube.common.helper.Results
+import com.example.youtube.model.rest.YoutubeRepository.getYoutubePopularList
 import kotlinx.coroutines.launch
 
 class TurkeyViewModel : ViewModel() {
@@ -18,7 +19,7 @@ class TurkeyViewModel : ViewModel() {
 
     fun getPopList(country: String) {
         viewModelScope.launch {
-            val data = ServiceRetrofit().getYoutubePopularList(country)
+            val data =getYoutubePopularList(country)
             _popListLiveData.postValue(data)
         }
 

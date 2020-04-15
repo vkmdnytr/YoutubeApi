@@ -33,17 +33,6 @@ android {
         jvmTarget = "1.8"
     }
 
-    flavorDimensions "version"
-    productFlavors {
-        production {
-            dimension = "version"
-            buildConfigField 'String', 'BASE_URL', '"https://www.googleapis.com/youtube/"'
-        }
-        internal {
-            dimension = "version"
-            buildConfigField 'String', 'BASE_URL', '"https://www.googleapis.com/youtube/"'
-        }
-    }
 }
 
 dependencies {
