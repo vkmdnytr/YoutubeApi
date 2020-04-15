@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mini List</string>
+    <string name="page_name">Detay</string>
+    <string name="action_turkey">Türkiye</string>
+    <string name="action_us">Amerika</string>
+    <string name="action_up_germany">Almanya</string>
+    <!--ERROR-->
+    <string name="error_text">Hata Oluştu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

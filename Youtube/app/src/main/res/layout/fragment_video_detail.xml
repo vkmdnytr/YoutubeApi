@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.youtube.detail.VideoDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:paddingBottom="@dimen/card_view_margin">
+
+        <TextView
+            android:id="@+id/textDetailYoutubeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineHeight="20dp"
+            android:paddingLeft="@dimen/card_view_margin_small"
+            android:textColor="@color/red"
+            android:textSize="25dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView
+            android:id="@+id/youtubeDetailView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hardwareAccelerated="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textDetailYoutubeTitle"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/videoDetailView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/card_view_margin_small"
+            android:paddingRight="4dp"
+            android:src="@drawable/icon_view"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView" />
+
+        <TextView
+            android:id="@+id/videoDetailViewCount"
+            style="android:style/Widget.Material.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:paddingRight="@dimen/_8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textIsSelectable="false"
+            android:textSize="16dp"
+            app:layout_constraintLeft_toRightOf="@+id/videoDetailView"
+            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView"
+            tools:text="" />
+
+        <ImageView
+            android:id="@+id/youtubeDetailLike"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:paddingRight="4dp"
+            android:src="@drawable/icon_love"
+            app:layout_constraintLeft_toRightOf="@+id/videoDetailViewCount"
+            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView" />
+
+        <TextView
+            android:id="@+id/likeDetailCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:paddingLeft="@dimen/card_view_margin_small"
+            android:paddingRight="@dimen/card_view_margin_small"
+            android:textColor="@color/colorSecondaryText"
+            android:textIsSelectable="false"
+            android:textSize="16dp"
+            app:layout_constraintLeft_toRightOf="@+id/youtubeDetailLike"
+            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/textDetailYoutubeSubTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            android:lineHeight="20dp"
+            android:paddingLeft="@dimen/card_view_margin_small"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/videoDetailView"
+            tools:text="" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/destinationDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:padding="@dimen/card_view_margin_small"
+            android:paddingTop="@dimen/card_view_margin_small"
+            android:text="@string/app_name"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textDetailYoutubeSubTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
