@@ -15,7 +15,7 @@ import com.example.youtube.common.helper.OnItemListClick
 import com.example.youtube.model.entities.Item
 import com.example.youtube.model.entities.YouTubeResponseItem
 import com.example.youtube.common.helper.Results
-import com.example.youtube.ui.videolist.YoutubeAdapter
+import com.example.youtube.ui.videolist.YoutubeTrendRecyclerViewAdapter
 import kotlinx.android.synthetic.main.fragment_germany.*
 import kotlinx.android.synthetic.main.fragment_turkey.popListProgress
 import kotlinx.android.synthetic.main.fragment_turkey.popListRecyclerView
@@ -24,7 +24,7 @@ class GermanyFragment : Fragment(),
     OnItemListClick {
 
     private val viewModel: GermanyViewModel by viewModels()
-    private lateinit var youtubeAdapter: YoutubeAdapter
+    private lateinit var youtubeAdapter: YoutubeTrendRecyclerViewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +36,7 @@ class GermanyFragment : Fragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        youtubeAdapter = YoutubeAdapter(
+        youtubeAdapter = YoutubeTrendRecyclerViewAdapter(
             emptyList(),
             lifecycle,
             this
