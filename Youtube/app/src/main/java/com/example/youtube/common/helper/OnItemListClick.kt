@@ -1,4 +1,4 @@
-package com.example.youtube.common
+package com.example.youtube.common.helper
 
 import com.example.youtube.model.entities.Item
 

@@ -1,4 +1,4 @@
-package com.example.youtube.common
+package com.example.youtube.common.customview
 
 import android.content.Context
 import android.util.AttributeSet

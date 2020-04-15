@@ -1,4 +1,4 @@
-package com.example.youtube.common
+package com.example.youtube.common.helper
 
 import androidx.annotation.MainThread
 import androidx.annotation.Nullable

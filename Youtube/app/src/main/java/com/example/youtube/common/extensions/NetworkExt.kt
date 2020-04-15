@@ -1,6 +1,6 @@
-package com.example.youtube.common
+package com.example.youtube.common.extensions
 
-import com.example.youtube.model.sealed.Results
+import com.example.youtube.common.helper.Results
 
 suspend fun <T : Any> safeApiCall(call: suspend () -> Results<T>): Results<T> {
     return try {

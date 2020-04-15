@@ -11,14 +11,15 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.youtube.R
-import com.example.youtube.common.OnItemListClick
+import com.example.youtube.common.helper.OnItemListClick
 import com.example.youtube.model.entities.Item
 import com.example.youtube.model.entities.YouTubeResponseItem
-import com.example.youtube.model.sealed.Results
+import com.example.youtube.common.helper.Results
 import com.example.youtube.ui.videolist.YoutubeAdapter
 import kotlinx.android.synthetic.main.fragment_turkey.*
 
-class TurkeyFragment : Fragment(), OnItemListClick {
+class TurkeyFragment : Fragment(),
+    OnItemListClick {
 
     private val viewModel: TurkeyViewModel by viewModels()
     private lateinit var youtubeAdapter: YoutubeAdapter

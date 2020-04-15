@@ -23,7 +23,7 @@
         android:layout_gravity="center"
         android:visibility="visible" />
 
-    <com.example.youtube.common.YouTubeErrorView
+    <com.example.youtube.common.customview.YouTubeErrorView
         android:id="@+id/errorView"
         android:visibility="gone"
         android:gravity="center"
