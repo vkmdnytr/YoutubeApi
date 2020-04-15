@@ -49,13 +49,12 @@ class YoutubeTrendRecyclerViewAdapter(
         val lifecycle: Lifecycle,
         private val listener: OnItemListClick
     ) : RecyclerView.ViewHolder(itemView) {
-        private var textReleaseDate: TextView = itemView.findViewById(R.id.textDetailReleaseDate)
-        private var subTitle: TextView = itemView.findViewById(R.id.textDetailYoutubeSubTitle)
-        private var title: TextView = itemView.findViewById(R.id.textDetailYoutubeTitle)
+        private var subTitle: TextView = itemView.findViewById(R.id.textYoutubeSubTitle)
+        private var title: TextView = itemView.findViewById(R.id.textYoutubeTitle)
         private var youtubePlayView: YouTubePlayerView =
-            itemView.findViewById(R.id.youtubeDetailView)
-        private var likeCount: TextView = itemView.findViewById(R.id.likeDetailCount)
-        var videoViewCount: TextView = itemView.findViewById(R.id.videoDetailViewCount)
+            itemView.findViewById(R.id.youtubeView)
+
+        var videoViewCount: TextView = itemView.findViewById(R.id.videoViewCount)
         var youtubeItemCoverFrameLayout: FrameLayout =
             itemView.findViewById(R.id.youtubeItemCoverFrameLayout)
 
@@ -65,8 +64,6 @@ class YoutubeTrendRecyclerViewAdapter(
 
             subTitle.text = mDataSource.snippet.channelTitle
             title.text = mDataSource.snippet.title
-            textReleaseDate.text = mDataSource.snippet.channelId
-            likeCount.text = mDataSource.statistics.likeCount
             videoViewCount.text = mDataSource.statistics.viewCount
 
 

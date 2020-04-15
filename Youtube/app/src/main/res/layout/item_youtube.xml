@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/youtubeItemCoverFrameLayout"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
     android:paddingTop="@dimen/card_view_margin"
-    android:paddingBottom="@dimen/card_view_margin"
-    android:id="@+id/youtubeItemCoverFrameLayout"
-    android:layout_width="match_parent">
+    android:paddingBottom="@dimen/card_view_margin">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:paddingBottom="@dimen/card_view_margin"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        android:layout_height="wrap_content">
+        android:paddingBottom="@dimen/card_view_margin">
 
         <com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView
-            android:id="@+id/youtubeDetailView"
+            android:id="@+id/youtubeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hardwareAccelerated="false"
@@ -25,92 +25,57 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/textDetailYoutubeTitle"
+            android:id="@+id/textYoutubeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
+            android:lineHeight="20dp"
             android:paddingLeft="@dimen/card_view_margin_small"
             android:textColor="@color/red"
-            android:lineHeight="20dp"
-            app:layout_constraintLeft_toLeftOf="@id/youtubeDetailView"
-            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView"
+            android:textSize="25dp"
+            app:layout_constraintLeft_toLeftOf="@id/youtubeView"
+            app:layout_constraintTop_toBottomOf="@id/youtubeView"
             tools:text="Avengers" />
-        <TextView
-            android:id="@+id/textDetailYoutubeSubTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textSize="16dp"
-            android:paddingLeft="@dimen/card_view_margin_small"
-            android:textColor="@android:color/white"
-            app:layout_constraintLeft_toLeftOf="@id/textDetailYoutubeTitle"
-            app:layout_constraintTop_toBottomOf="@id/textDetailYoutubeTitle"
-            android:lineHeight="20dp"
-            tools:text="Views: 100" />
 
         <TextView
-            android:id="@+id/textDetailReleaseDate"
+            android:id="@+id/textYoutubeSubTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:paddingLeft="@dimen/card_view_margin_small"
-            android:textSize="16dp"
             android:lineHeight="20dp"
+            android:paddingLeft="@dimen/card_view_margin_small"
             android:textColor="@android:color/white"
-            app:layout_constraintStart_toStartOf="@id/textDetailYoutubeSubTitle"
-            app:layout_constraintTop_toBottomOf="@id/textDetailYoutubeSubTitle"
-            app:layout_constraintBottom_toTopOf="@+id/youtubeDetailLike"
-            tools:text="Release Date: 16 Feb 2018" />
+            android:textSize="16dp"
+            app:layout_constraintLeft_toLeftOf="@id/textYoutubeTitle"
+            app:layout_constraintTop_toBottomOf="@id/textYoutubeTitle"
+            tools:text="Views: 100" />
 
 
         <ImageView
-            android:id="@+id/videoDetailView"
+            android:id="@+id/videoView"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="@dimen/card_view_margin_small"
-            android:src="@drawable/icon_view"
             android:paddingRight="4dp"
+            android:src="@drawable/icon_view"
+            android:tint="@color/colorAccent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textDetailReleaseDate"/>
+            app:layout_constraintTop_toBottomOf="@id/textYoutubeSubTitle" />
+
         <TextView
-            android:id="@+id/videoDetailViewCount"
+            android:id="@+id/videoViewCount"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:textSize="16dp"
-            android:lineHeight="20dp"
             android:gravity="center"
-            android:textIsSelectable="false"
+            android:lineHeight="20dp"
             android:paddingRight="@dimen/_8dp"
-            style="android:style/Widget.Material.RatingBar.Small"
-            app:layout_constraintLeft_toRightOf="@+id/videoDetailView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textDetailReleaseDate"
             android:textColor="@color/colorSecondaryText"
+            android:textIsSelectable="false"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/videoView"
+            app:layout_constraintLeft_toRightOf="@+id/videoView"
+            app:layout_constraintTop_toBottomOf="@id/textYoutubeSubTitle"
             tools:text="" />
 
-        <ImageView
-            android:id="@+id/youtubeDetailLike"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-              android:src="@drawable/icon_love"
-            android:paddingRight="4dp"
-            app:layout_constraintLeft_toRightOf="@+id/videoDetailViewCount"
-            app:layout_constraintTop_toBottomOf="@id/textDetailReleaseDate"/>
-        <TextView
-            android:id="@+id/likeDetailCount"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:textSize="16dp"
-            android:lineHeight="20dp"
-            android:gravity="center"
-            android:textIsSelectable="false"
-            android:paddingRight="@dimen/_8dp"
-            style="android:style/Widget.Material.RatingBar.Small"
-            app:layout_constraintLeft_toRightOf="@+id/youtubeDetailLike"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:textColor="@color/colorSecondaryText"
-            app:layout_constraintTop_toBottomOf="@id/textDetailReleaseDate"
-            tools:text="" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -18,32 +18,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineHeight="20dp"
-            android:paddingLeft="@dimen/card_view_margin_small"
             android:textColor="@color/red"
             android:textSize="25dp"
+            android:paddingTop="@dimen/card_view_margin"
+            android:paddingLeft="@dimen/card_view_margin_small"
+            android:paddingBottom="@dimen/card_view_margin_small"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView
-            android:id="@+id/youtubeDetailView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hardwareAccelerated="false"
+        <FrameLayout
+            android:id="@+id/youtubeDetailFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textDetailYoutubeTitle"
+            android:layout_margin="@dimen/card_view_margin_small"
+            app:layout_constraintTop_toBottomOf="@id/textDetailYoutubeTitle">
+        <com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView
+            android:id="@+id/youtubeDetailView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hardwareAccelerated="false"
             tools:ignore="MissingConstraints" />
+        </FrameLayout>
 
         <ImageView
             android:id="@+id/videoDetailView"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="@dimen/card_view_margin_small"
-            android:paddingRight="4dp"
+            android:tint="@color/colorAccent"
             android:src="@drawable/icon_view"
+            android:paddingRight="@dimen/_8dp"
+            android:layout_marginLeft="@dimen/card_view_margin_small"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView" />
+            app:layout_constraintTop_toBottomOf="@id/youtubeDetailFragment" />
 
         <TextView
             android:id="@+id/videoDetailViewCount"
@@ -52,22 +61,24 @@
             android:layout_height="0dp"
             android:gravity="center"
             android:lineHeight="20dp"
-            android:paddingRight="@dimen/_8dp"
             android:textColor="@color/colorSecondaryText"
             android:textIsSelectable="false"
             android:textSize="16dp"
+            android:paddingTop="3dp"
+            android:paddingRight="@dimen/_8dp"
             app:layout_constraintLeft_toRightOf="@+id/videoDetailView"
-            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView"
+            app:layout_constraintTop_toBottomOf="@id/youtubeDetailFragment"
             tools:text="" />
 
         <ImageView
             android:id="@+id/youtubeDetailLike"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:paddingRight="4dp"
+            android:paddingRight="@dimen/_8dp"
             android:src="@drawable/icon_love"
+            android:tint="@color/colorAccent"
             app:layout_constraintLeft_toRightOf="@+id/videoDetailViewCount"
-            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView" />
+            app:layout_constraintTop_toBottomOf="@id/youtubeDetailFragment" />
 
         <TextView
             android:id="@+id/likeDetailCount"
@@ -75,13 +86,13 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:lineHeight="20dp"
-            android:paddingLeft="@dimen/card_view_margin_small"
-            android:paddingRight="@dimen/card_view_margin_small"
+            android:paddingTop="3dp"
+            android:paddingRight="@dimen/_8dp"
             android:textColor="@color/colorSecondaryText"
             android:textIsSelectable="false"
             android:textSize="16dp"
             app:layout_constraintLeft_toRightOf="@+id/youtubeDetailLike"
-            app:layout_constraintTop_toBottomOf="@id/youtubeDetailView"
+            app:layout_constraintTop_toBottomOf="@id/youtubeDetailFragment"
             tools:text="" />
 
         <TextView
@@ -92,7 +103,7 @@
             android:gravity="left"
             android:lineHeight="20dp"
             android:paddingLeft="@dimen/card_view_margin_small"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorSecondaryText"
             android:textSize="16dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
