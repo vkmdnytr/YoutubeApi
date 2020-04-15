@@ -6,18 +6,18 @@
     <item
         android:id="@+id/turkeyFragment"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/icon_turkey"
+        android:icon="@drawable/icon_youtube"
         android:title="@string/turkey_tab_title" />
 
     <item
         android:id="@+id/usaFragment"
-        android:icon="@drawable/icon_us"
+        android:icon="@drawable/icon_youtube"
         app:showAsAction="ifRoom"
         android:title="@string/us_tab_title" />
 
     <item
         android:id="@+id/germanyFragment"
-        android:icon="@drawable/icon_germany"
+        android:icon="@drawable/icon_youtube"
         app:showAsAction="ifRoom"
         android:title="@string/germany_tab_title" />
 
