@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/videoDetailFragment"
         android:name="com.example.youtube.ui.youtube.detail.VideoDetailFragment"
-        android:label="@string/page_name"
+        android:label="@string/detail_title"
         tools:layout="@layout/fragment_video_detail" >
         <argument
             android:name="detailItem"

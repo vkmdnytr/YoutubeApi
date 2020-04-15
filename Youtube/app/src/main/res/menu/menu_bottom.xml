@@ -7,18 +7,18 @@
         android:id="@+id/trFragment"
         app:showAsAction="ifRoom"
         android:icon="@drawable/icon_turkey"
-        android:title="@string/action_turkey" />
+        android:title="@string/turkey_tab_title" />
 
     <item
         android:id="@+id/usFragment"
         android:icon="@drawable/icon_us"
         app:showAsAction="ifRoom"
-        android:title="@string/action_us" />
+        android:title="@string/us_tab_title" />
 
     <item
         android:id="@+id/deFragment"
         android:icon="@drawable/icon_germany"
         app:showAsAction="ifRoom"
-        android:title="@string/action_up_germany" />
+        android:title="@string/germany_tab_title" />
 
 </menu>
